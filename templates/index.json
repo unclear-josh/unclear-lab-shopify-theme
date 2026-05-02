@@ -3,9 +3,9 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "tag": "Unclear Lab — V60 Filters",
-        "heading": "<p>Nothing but<br><em>the cup</em></p>",
-        "body": "Plant-derived lyocell filters for the Hario V60. No paper taste, no pre-rinse, no compromise — just a clean, bright pour every time.",
+        "tag": "Unclear Lab",
+        "heading": "<p>Your heading<br><em>goes here</em></p>",
+        "body": "A short line about your product — what it does and why it matters.",
         "cta_label": "Shop now",
         "cta_url": "/collections/all",
         "secondary_label": "Learn more",
@@ -16,7 +16,7 @@
       "type": "featured-collection",
       "settings": {
         "heading": "The collection",
-        "subtext": "Everything we make is designed to get out of the way and let the coffee speak.",
+        "subtext": "Everything we make is designed to get out of the way.",
         "product_limit": 3,
         "view_all_label": "View all"
       }
@@ -24,29 +24,29 @@
     "product-features": {
       "type": "product-features",
       "settings": {
-        "heading": "Two materials, one purpose",
-        "subtext": "Lyocell gives you a flavour-neutral sheet. PLA gives it the structure to hold its shape under a full, heavy pour."
+        "heading": "What makes it different",
+        "subtext": ""
       },
       "blocks": {
         "feature-1": {
           "type": "feature",
           "settings": {
-            "title": "No pre-rinse",
-            "description": "Lyocell carries no paper taste. Skip the rinse step entirely — one less thing between you and your first sip."
+            "title": "Feature one",
+            "description": "Describe the first key feature of your product here."
           }
         },
         "feature-2": {
           "type": "feature",
           "settings": {
-            "title": "Fine filtration",
-            "description": "Tight fibre structure catches fine coffee particles while letting the oils that carry brightness and sweetness through."
+            "title": "Feature two",
+            "description": "Describe the second key feature of your product here."
           }
         },
         "feature-3": {
           "type": "feature",
           "settings": {
-            "title": "Certified compostable",
-            "description": "Both lyocell and PLA are plant-derived and certified industrially compostable — grounds and all, no separation needed."
+            "title": "Feature three",
+            "description": "Describe the third key feature of your product here."
           }
         }
       },
@@ -56,7 +56,7 @@
       "type": "email-cta",
       "settings": {
         "tag": "Coming soon",
-        "heading": "<p>Be first<br><em>to brew</em></p>",
+        "heading": "<p>Be first<br><em>to know</em></p>",
         "button_label": "Notify me",
         "confirm_text": "You're on the list — we'll be in touch"
       }
