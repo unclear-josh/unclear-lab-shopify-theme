@@ -1,12 +1,5 @@
 <footer class="site-footer" role="contentinfo">
   <div class="footer-inner">
-    <div class="footer-brand">
-      <a href="{{ routes.root_url }}" class="footer-logo">{{ shop.name }}</a>
-      {%- if section.settings.tagline != blank -%}
-        <p class="footer-tagline">{{ section.settings.tagline }}</p>
-      {%- endif -%}
-    </div>
-
     <div class="footer-links">
       {%- for block in section.blocks -%}
         {%- if block.type == 'link_column' -%}
