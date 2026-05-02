@@ -33,13 +33,13 @@
   <!-- Grain overlay -->
   <div class="grain-overlay" aria-hidden="true"></div>
 
-  {%- sections 'header' -%}
+  {%- section 'header' -%}
 
   <main id="main-content" role="main">
     {{ content_for_layout }}
   </main>
 
-  {%- sections 'footer' -%}
+  {%- section 'footer' -%}
 
   <script src="{{ 'theme.js' | asset_url }}" defer></script>
 </body>
