@@ -2,23 +2,8 @@
   "sections": {
     "main": {
       "type": "main-product",
-      "blocks": {
-        "meta-1": {
-          "type": "meta_item",
-          "settings": {
-            "label": "Detail",
-            "text": "Add product detail here"
-          }
-        },
-        "meta-2": {
-          "type": "meta_item",
-          "settings": {
-            "label": "Ships in",
-            "text": "3–5 business days"
-          }
-        }
-      },
-      "block_order": ["meta-1", "meta-2"]
+      "blocks": {},
+      "block_order": []
     }
   },
   "order": ["main"]
