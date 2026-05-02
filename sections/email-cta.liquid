@@ -1,0 +1,67 @@
+<section class="cta-band" id="email-cta">
+  {%- if section.settings.tag != blank -%}
+    <p class="section-tag cta-band-tag reveal">{{ section.settings.tag }}</p>
+  {%- endif -%}
+
+  {%- if section.settings.heading != blank -%}
+    <h2 class="reveal reveal-delay-1">{{ section.settings.heading }}</h2>
+  {%- endif -%}
+
+  <div class="cta-band-form reveal reveal-delay-2" data-email-form data-confirm="cta-confirm">
+    <input
+      type="email"
+      class="input"
+      placeholder="{{ section.settings.placeholder | default: 'your@email.com' }}"
+      aria-label="Email address"
+    >
+    <button type="button" class="btn btn-ghost-light">
+      {{ section.settings.button_label | default: 'Notify me' }}
+    </button>
+  </div>
+  <p class="cta-confirm" id="cta-confirm">
+    {{ section.settings.confirm_text | default: "You're on the list — we'll be in touch" }}
+  </p>
+</section>
+
+{% schema %}
+{
+  "name": "Email CTA band",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tag",
+      "label": "Tag",
+      "default": "Coming soon"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Be first<br><em>to brew</em></p>"
+    },
+    {
+      "type": "text",
+      "id": "placeholder",
+      "label": "Input placeholder",
+      "default": "your@email.com"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Notify me"
+    },
+    {
+      "type": "text",
+      "id": "confirm_text",
+      "label": "Confirmation text",
+      "default": "You're on the list — we'll be in touch"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Email CTA band"
+    }
+  ]
+}
+{% endschema %}

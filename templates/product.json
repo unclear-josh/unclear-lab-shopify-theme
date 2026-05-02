@@ -1,0 +1,32 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "meta-1": {
+          "type": "meta_item",
+          "settings": {
+            "label": "Material",
+            "text": "Lyocell + PLA"
+          }
+        },
+        "meta-2": {
+          "type": "meta_item",
+          "settings": {
+            "label": "Compostable",
+            "text": "Industrially compostable — grounds and filter together"
+          }
+        },
+        "meta-3": {
+          "type": "meta_item",
+          "settings": {
+            "label": "Ships in",
+            "text": "3–5 business days"
+          }
+        }
+      },
+      "block_order": ["meta-1", "meta-2", "meta-3"]
+    }
+  },
+  "order": ["main"]
+}

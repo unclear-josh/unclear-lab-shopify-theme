@@ -1,0 +1,18 @@
+<div class="not-found">
+  <div class="not-found-num reveal">404</div>
+  <h1 class="reveal reveal-delay-1" style="font-size:clamp(24px,3vw,40px);">
+    Page not <em>found</em>
+  </h1>
+  <p class="not-found-msg reveal reveal-delay-2">
+    The page you're looking for doesn't exist or has been moved.
+  </p>
+  <div class="reveal reveal-delay-3">
+    <a href="{{ routes.root_url }}" class="btn btn-dark">Go home</a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "404"
+}
+{% endschema %}

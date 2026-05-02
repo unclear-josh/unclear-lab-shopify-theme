@@ -1,0 +1,73 @@
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="{{ routes.root_url }}" class="footer-logo">{{ shop.name }}</a>
+      {%- if section.settings.tagline != blank -%}
+        <p class="footer-tagline">{{ section.settings.tagline }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="footer-links">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'link_column' -%}
+          <div class="footer-col" {{ block.shopify_attributes }}>
+            {%- if block.settings.title != blank -%}
+              <p class="footer-col-title">{{ block.settings.title }}</p>
+            {%- endif -%}
+            <ul class="footer-col-links">
+              {%- for link in block.settings.menu.links -%}
+                <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span class="footer-copy">
+      &copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.
+    </span>
+    <div style="display:flex;gap:20px;">
+      {%- if settings.social_instagram != blank -%}
+        <a href="{{ settings.social_instagram }}" class="footer-copy" style="text-decoration:none;" target="_blank" rel="noopener">Instagram</a>
+      {%- endif -%}
+      {%- if settings.social_twitter != blank -%}
+        <a href="{{ settings.social_twitter }}" class="footer-copy" style="text-decoration:none;" target="_blank" rel="noopener">Twitter</a>
+      {%- endif -%}
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline",
+      "default": "Made with intention."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "link_column",
+      "name": "Link column",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Column title"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

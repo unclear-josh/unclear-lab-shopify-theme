@@ -1,0 +1,57 @@
+<div class="collection-page">
+
+  <div class="collection-hero">
+    <p class="section-tag collection-hero-tag reveal">
+      {{ collection.products_count }}
+      {%- if collection.products_count == 1 -%} product {%- else -%} products {%- endif -%}
+    </p>
+    <h1 class="collection-title reveal reveal-delay-1">{{ collection.title }}</h1>
+    {%- if collection.description != blank -%}
+      <p class="collection-desc reveal reveal-delay-2">{{ collection.description }}</p>
+    {%- endif -%}
+  </div>
+
+  <div class="collection-grid-wrap">
+    <div class="collection-grid">
+      {%- for product in collection.products -%}
+        {%- render 'product-card', product: product, index: forloop.index -%}
+      {%- else -%}
+        <div style="padding:80px 48px;grid-column:1/-1;">
+          <p style="color:var(--ink-dim);">No products in this collection.</p>
+        </div>
+      {%- endfor -%}
+    </div>
+
+    {%- if paginate.pages > 1 -%}
+      <div style="margin-top:64px;display:flex;gap:8px;justify-content:center;align-items:center;">
+        {%- if paginate.previous -%}
+          <a href="{{ paginate.previous.url }}" class="btn btn-outline">← Previous</a>
+        {%- endif -%}
+        <span style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-dim);">
+          {{ paginate.current_page }} / {{ paginate.pages }}
+        </span>
+        {%- if paginate.next -%}
+          <a href="{{ paginate.next.url }}" class="btn btn-outline">Next →</a>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "Collection",
+  "settings": [
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "label": "Products per page",
+      "min": 6,
+      "max": 24,
+      "step": 3,
+      "default": 12
+    }
+  ]
+}
+{% endschema %}

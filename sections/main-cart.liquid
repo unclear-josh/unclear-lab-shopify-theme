@@ -1,0 +1,107 @@
+<div class="cart-page">
+
+  {%- if cart.item_count == 0 -%}
+
+    <div class="cart-empty">
+      <div class="cart-empty-title">Your cart is empty.</div>
+      <p class="cart-empty-sub">Looks like you haven't added anything yet.</p>
+      <a href="{{ routes.all_products_collection_url }}" class="btn btn-dark">
+        Continue shopping
+      </a>
+    </div>
+
+  {%- else -%}
+
+    <div class="cart-header">
+      <h1 class="cart-title">Cart</h1>
+      <span class="cart-count-label">
+        {{ cart.item_count }} {%- if cart.item_count == 1 -%} item {%- else -%} items {%- endif -%}
+      </span>
+    </div>
+
+    <form action="{{ routes.cart_url }}" method="post">
+
+      <div class="cart-items">
+        {%- for item in cart.items -%}
+          <div class="cart-item">
+
+            <!-- Image -->
+            <a href="{{ item.url }}" class="cart-item-image">
+              {%- if item.image -%}
+                <img
+                  src="{{ item.image | image_url: width: 192 }}"
+                  alt="{{ item.image.alt | escape }}"
+                  width="96"
+                  height="96"
+                  loading="lazy"
+                >
+              {%- endif -%}
+            </a>
+
+            <!-- Info -->
+            <div>
+              <p class="cart-item-title">
+                <a href="{{ item.url }}" style="text-decoration:none;color:inherit;">{{ item.product.title }}</a>
+              </p>
+              {%- unless item.product.has_only_default_variant -%}
+                <p class="cart-item-variant">{{ item.variant.title }}</p>
+              {%- endunless -%}
+
+              <div class="cart-item-qty">
+                <button type="button" class="qty-btn" data-qty-dec aria-label="Decrease quantity">−</button>
+                <span class="qty-value">{{ item.quantity }}</span>
+                <button type="button" class="qty-inc qty-btn" data-qty-inc aria-label="Increase quantity">+</button>
+                <input
+                  type="hidden"
+                  name="updates[]"
+                  value="{{ item.quantity }}"
+                  data-line-key="{{ item.key }}"
+                >
+              </div>
+
+              <button
+                type="submit"
+                name="remove"
+                value="{{ item.key }}"
+                class="cart-item-remove"
+                formaction="{{ routes.cart_change_url }}?id={{ item.key }}&amp;quantity=0"
+                formmethod="post"
+              >
+                Remove
+              </button>
+            </div>
+
+            <!-- Price -->
+            <p class="cart-item-price">{{ item.final_line_price | money }}</p>
+
+          </div>
+        {%- endfor -%}
+      </div>
+
+      <div class="cart-summary">
+        <div class="cart-total-row">
+          <span class="cart-total-label">Subtotal</span>
+          <span class="cart-total-value">{{ cart.total_price | money }}</span>
+        </div>
+        <p class="cart-note">Taxes and shipping calculated at checkout</p>
+        <div class="cart-actions">
+          <button type="submit" name="checkout" class="btn btn-dark btn-full">
+            Checkout
+          </button>
+          <a href="{{ routes.all_products_collection_url }}" class="btn btn-outline btn-full">
+            Continue shopping
+          </a>
+        </div>
+      </div>
+
+    </form>
+
+  {%- endif -%}
+
+</div>
+
+{% schema %}
+{
+  "name": "Cart"
+}
+{% endschema %}

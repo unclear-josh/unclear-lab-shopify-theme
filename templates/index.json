@@ -1,0 +1,66 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "tag": "Unclear Lab — V60 Filters",
+        "heading": "<p>Nothing but<br><em>the cup</em></p>",
+        "body": "Plant-derived lyocell filters for the Hario V60. No paper taste, no pre-rinse, no compromise — just a clean, bright pour every time.",
+        "cta_label": "Shop now",
+        "cta_url": "/collections/all",
+        "secondary_label": "Learn more",
+        "secondary_url": "/pages/about"
+      }
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "settings": {
+        "heading": "The collection",
+        "subtext": "Everything we make is designed to get out of the way and let the coffee speak.",
+        "product_limit": 3,
+        "view_all_label": "View all"
+      }
+    },
+    "product-features": {
+      "type": "product-features",
+      "settings": {
+        "heading": "Two materials, one purpose",
+        "subtext": "Lyocell gives you a flavour-neutral sheet. PLA gives it the structure to hold its shape under a full, heavy pour."
+      },
+      "blocks": {
+        "feature-1": {
+          "type": "feature",
+          "settings": {
+            "title": "No pre-rinse",
+            "description": "Lyocell carries no paper taste. Skip the rinse step entirely — one less thing between you and your first sip."
+          }
+        },
+        "feature-2": {
+          "type": "feature",
+          "settings": {
+            "title": "Fine filtration",
+            "description": "Tight fibre structure catches fine coffee particles while letting the oils that carry brightness and sweetness through."
+          }
+        },
+        "feature-3": {
+          "type": "feature",
+          "settings": {
+            "title": "Certified compostable",
+            "description": "Both lyocell and PLA are plant-derived and certified industrially compostable — grounds and all, no separation needed."
+          }
+        }
+      },
+      "block_order": ["feature-1", "feature-2", "feature-3"]
+    },
+    "email-cta": {
+      "type": "email-cta",
+      "settings": {
+        "tag": "Coming soon",
+        "heading": "<p>Be first<br><em>to brew</em></p>",
+        "button_label": "Notify me",
+        "confirm_text": "You're on the list — we'll be in touch"
+      }
+    }
+  },
+  "order": ["hero", "featured-collection", "product-features", "email-cta"]
+}

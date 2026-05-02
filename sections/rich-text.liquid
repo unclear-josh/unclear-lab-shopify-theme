@@ -1,0 +1,63 @@
+<div class="rich-text">
+  {%- if section.settings.tag != blank -%}
+    <p class="section-tag reveal" style="justify-content:center;margin-bottom:32px;">
+      {{ section.settings.tag }}
+    </p>
+  {%- endif -%}
+
+  {%- if section.settings.heading != blank -%}
+    <h2 class="reveal reveal-delay-1">{{ section.settings.heading }}</h2>
+  {%- endif -%}
+
+  {%- if section.settings.body != blank -%}
+    <div class="rte reveal reveal-delay-2" style="margin-top:24px;">
+      {{ section.settings.body }}
+    </div>
+  {%- endif -%}
+
+  {%- if section.settings.cta_label != blank -%}
+    <div style="margin-top:40px;" class="reveal reveal-delay-3">
+      <a href="{{ section.settings.cta_url }}" class="btn btn-dark">
+        {{ section.settings.cta_label }}
+      </a>
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Rich text",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tag",
+      "label": "Tag"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA label"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rich text"
+    }
+  ]
+}
+{% endschema %}

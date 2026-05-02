@@ -1,0 +1,11 @@
+{
+  "current": {
+    "color_background": "#F7F5F1",
+    "color_ink": "#1A1A18",
+    "color_accent": "#2D4A28",
+    "color_highlight": "#E85C20",
+    "heading_font": "Syne",
+    "footer_tagline": "Made with intention."
+  },
+  "presets": {}
+}

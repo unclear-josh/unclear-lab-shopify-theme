@@ -1,0 +1,80 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Unclear Lab",
+    "theme_version": "1.0.0",
+    "theme_author": "Unclear Lab",
+    "theme_documentation_url": "https://unclearlab.com",
+    "theme_support_url": "https://unclearlab.com"
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_background",
+        "label": "Background",
+        "default": "#F7F5F1"
+      },
+      {
+        "type": "color",
+        "id": "color_ink",
+        "label": "Primary text",
+        "default": "#1A1A18"
+      },
+      {
+        "type": "color",
+        "id": "color_accent",
+        "label": "Accent (forest)",
+        "default": "#2D4A28"
+      },
+      {
+        "type": "color",
+        "id": "color_highlight",
+        "label": "Highlight (tangerine)",
+        "default": "#E85C20"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "select",
+        "id": "heading_font",
+        "label": "Heading font",
+        "options": [
+          { "value": "Syne", "label": "Syne" },
+          { "value": "Inter", "label": "Inter" }
+        ],
+        "default": "Syne"
+      }
+    ]
+  },
+  {
+    "name": "Social",
+    "settings": [
+      {
+        "type": "url",
+        "id": "social_instagram",
+        "label": "Instagram URL"
+      },
+      {
+        "type": "url",
+        "id": "social_twitter",
+        "label": "Twitter / X URL"
+      }
+    ]
+  },
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "text",
+        "id": "footer_tagline",
+        "label": "Footer tagline",
+        "default": "Made with intention."
+      }
+    ]
+  }
+]

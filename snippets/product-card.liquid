@@ -1,0 +1,29 @@
+<a href="{{ product.url }}" class="product-card reveal">
+  <div class="product-card-image">
+    {%- if product.featured_image -%}
+      <img
+        src="{{ product.featured_image | image_url: width: 800 }}"
+        alt="{{ product.featured_image.alt | escape }}"
+        width="{{ product.featured_image.width }}"
+        height="{{ product.featured_image.height }}"
+        loading="lazy"
+      >
+    {%- endif -%}
+  </div>
+  <div class="product-card-body">
+    <p class="product-card-index">
+      {{- index | prepend: '0' | slice: -2, 2 -}}
+    </p>
+    <h3 class="product-card-title">{{ product.title }}</h3>
+    {%- if product.description != blank -%}
+      <p class="product-card-desc">{{ product.description | strip_html | truncate: 100 }}</p>
+    {%- endif -%}
+    <div class="product-card-footer">
+      <span class="product-card-price">
+        {%- if product.price_varies -%}From {% endif -%}
+        {{ product.price_min | money }}
+      </span>
+      <span class="product-card-arrow">→</span>
+    </div>
+  </div>
+</a>
