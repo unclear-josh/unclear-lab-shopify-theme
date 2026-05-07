@@ -17,7 +17,7 @@
       "type": "email-cta",
       "settings": {
         "tag": "Stay in the loop",
-        "heading": "Be first <em>to know</em>",
+        "heading": "Be first to know",
         "button_label": "Notify me",
         "confirm_text": "You're on the list — we'll be in touch"
       }
