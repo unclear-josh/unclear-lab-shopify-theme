@@ -341,7 +341,6 @@ img {
 /* ── Footer ── */
 
 .site-footer {
-  border-top: 1px solid var(--rule);
   background: var(--bg);
 }
 
