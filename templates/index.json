@@ -3,10 +3,10 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "tag": "Unclear Lab",
-        "heading": "<p>Your heading<br><em>goes here</em></p>",
-        "body": "A short line about your product — what it does and why it matters.",
-        "cta_label": "Shop now",
+        "tag": "New things, made well",
+        "heading": "<p>What's out<br><em>this month?</em></p>",
+        "body": "",
+        "cta_label": "Have a look",
         "cta_url": "/collections/all",
         "secondary_label": "",
         "secondary_url": ""
