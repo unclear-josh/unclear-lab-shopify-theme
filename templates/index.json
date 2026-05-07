@@ -12,15 +12,6 @@
         "secondary_url": ""
       }
     },
-    "featured-collection": {
-      "type": "featured-collection",
-      "settings": {
-        "heading": "The collection",
-        "subtext": "",
-        "product_limit": 3,
-        "view_all_label": ""
-      }
-    },
     "email-cta": {
       "type": "email-cta",
       "settings": {
@@ -31,5 +22,5 @@
       }
     }
   },
-  "order": ["hero", "featured-collection", "email-cta"]
+  "order": ["hero", "email-cta"]
 }
