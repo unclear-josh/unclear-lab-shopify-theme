@@ -1,43 +1,37 @@
-<section class="cta-band" id="email-cta">
-  {%- if section.settings.tag != blank -%}
-    <p class="section-tag cta-band-tag reveal">{{ section.settings.tag }}</p>
-  {%- endif -%}
+<section class="notify-section" id="email-cta">
+  <div class="notify-section-inner">
 
-  {%- if section.settings.heading != blank -%}
-    <h2 class="reveal reveal-delay-1">{{ section.settings.heading }}</h2>
-  {%- endif -%}
+    {%- if section.settings.heading != blank -%}
+      <h2 class="notify-heading reveal">{{ section.settings.heading }}</h2>
+    {%- endif -%}
 
-  <div class="cta-band-form reveal reveal-delay-2" data-email-form data-confirm="cta-confirm">
-    <input
-      type="email"
-      class="input"
-      placeholder="{{ section.settings.placeholder | default: 'your@email.com' }}"
-      aria-label="Email address"
-    >
-    <button type="button" class="btn btn-ghost-light">
-      {{ section.settings.button_label | default: 'Notify me' }}
-    </button>
+    <div class="notify-form reveal reveal-delay-1" data-email-form data-confirm="cta-confirm">
+      <input
+        type="email"
+        class="input notify-input"
+        placeholder="{{ section.settings.placeholder | default: 'your@email.com' }}"
+        aria-label="Email address"
+      >
+      <button type="button" class="btn btn-dark">
+        {{ section.settings.button_label | default: 'Notify me' }}
+      </button>
+    </div>
+    <p class="cta-confirm notify-confirm" id="cta-confirm">
+      {{ section.settings.confirm_text | default: "You're on the list — we'll be in touch" }}
+    </p>
+
   </div>
-  <p class="cta-confirm" id="cta-confirm">
-    {{ section.settings.confirm_text | default: "You're on the list — we'll be in touch" }}
-  </p>
 </section>
 
 {% schema %}
 {
-  "name": "Email CTA band",
+  "name": "Email notify",
   "settings": [
     {
       "type": "text",
-      "id": "tag",
-      "label": "Tag",
-      "default": "Coming soon"
-    },
-    {
-      "type": "richtext",
       "id": "heading",
       "label": "Heading",
-      "default": "<p>Be first<br><em>to know</em></p>"
+      "default": "Stay in the loop"
     },
     {
       "type": "text",
@@ -60,7 +54,7 @@
   ],
   "presets": [
     {
-      "name": "Email CTA band"
+      "name": "Email notify"
     }
   ]
 }

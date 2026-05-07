@@ -746,6 +746,64 @@ img {
   display: block;
 }
 
+/* ── Notify section ── */
+
+.notify-section {
+  padding: 96px 24px;
+  text-align: center;
+  background: var(--bg);
+  position: relative;
+}
+
+.notify-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 60%, var(--bg-warm) 0%, var(--bg) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.notify-section-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.notify-heading {
+  font-family: 'Syne', sans-serif;
+  font-weight: 300;
+  font-size: clamp(28px, 3.5vw, 44px);
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  color: var(--ink);
+  margin-bottom: 40px;
+}
+
+.notify-form {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.notify-input {
+  width: 260px;
+}
+
+.notify-confirm {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  margin-top: 20px;
+}
+
 /* ── Section rule ── */
 
 .section-rule {
