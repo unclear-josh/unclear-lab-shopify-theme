@@ -89,15 +89,45 @@
 
 // ── Variant selector ──
 (function () {
-  const variantBtns = document.querySelectorAll('.variant-btn');
+  const variants = window.productVariants;
   const variantInput = document.getElementById('variant-id');
-  if (!variantBtns.length || !variantInput) return;
+  const atcWrap = document.getElementById('product-atc');
+  if (!variants || !variantInput) return;
 
-  variantBtns.forEach(btn => {
+  // Track currently selected option values by index
+  const selectedOptions = {};
+  document.querySelectorAll('.variant-btn.selected').forEach(btn => {
+    selectedOptions[btn.dataset.optionIndex] = btn.dataset.value;
+  });
+
+  function findVariant() {
+    return variants.find(v =>
+      Object.entries(selectedOptions).every(([idx, val]) =>
+        v['option' + (parseInt(idx) + 1)] === val
+      )
+    );
+  }
+
+  function updateATC(variant) {
+    if (!atcWrap) return;
+    if (variant && variant.available) {
+      atcWrap.innerHTML = '<button type="submit" name="add" class="btn btn-dark btn-full">Add to cart</button>';
+    } else {
+      atcWrap.innerHTML = '<button type="button" class="btn btn-outline btn-full" disabled>Sold out</button>';
+    }
+  }
+
+  document.querySelectorAll('.variant-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      variantBtns.forEach(b => b.classList.remove('selected'));
+      const idx = btn.dataset.optionIndex;
+      // Deselect siblings in same option group
+      document.querySelectorAll(`.variant-btn[data-option-index="${idx}"]`).forEach(b => b.classList.remove('selected'));
       btn.classList.add('selected');
-      variantInput.value = btn.dataset.variantId;
+      selectedOptions[idx] = btn.dataset.value;
+
+      const match = findVariant();
+      variantInput.value = match ? match.id : '';
+      updateATC(match);
     });
   });
 })();

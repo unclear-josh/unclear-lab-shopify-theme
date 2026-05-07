@@ -66,21 +66,25 @@
       <div class="product-desc rte">{{ product.description }}</div>
     {%- endif -%}
 
-    <form action="{{ routes.cart_add_url }}" method="post" enctype="multipart/form-data">
+    {%- assign current_variant = product.selected_or_first_available_variant -%}
+
+    <script>
+      window.productVariants = {{ product.variants | json }};
+    </script>
+
+    <form action="{{ routes.cart_add_url }}" method="post" enctype="multipart/form-data" id="product-form">
 
       {%- unless product.has_only_default_variant -%}
         {%- for option in product.options_with_values -%}
           <div class="product-form-group">
-            <label class="product-form-label" for="option-{{ forloop.index }}">
-              {{ option.name }}
-            </label>
-            <div class="product-variants">
+            <label class="product-form-label">{{ option.name }}</label>
+            <div class="product-variants" data-option-index="{{ forloop.index0 }}">
               {%- for value in option.values -%}
                 <button
                   type="button"
-                  class="variant-btn {% if option.selected_value == value %}selected{% endif %}"
+                  class="variant-btn{% if option.selected_value == value %} selected{% endif %}"
                   data-option-index="{{ forloop.parentloop.index0 }}"
-                  data-value="{{ value }}"
+                  data-value="{{ value | escape }}"
                 >
                   {{ value }}
                 </button>
@@ -90,11 +94,11 @@
         {%- endfor -%}
       {%- endunless -%}
 
-      <input type="hidden" name="id" id="variant-id" value="{{ product.selected_or_first_available_variant.id }}">
+      <input type="hidden" name="id" id="variant-id" value="{{ current_variant.id }}">
       <input type="hidden" name="quantity" value="1">
 
-      <div class="product-atc">
-        {%- if product.selected_or_first_available_variant.available -%}
+      <div class="product-atc" id="product-atc">
+        {%- if current_variant.available -%}
           <button type="submit" name="add" class="btn btn-dark btn-full">
             Add to cart
           </button>
