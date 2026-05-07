@@ -1,4 +1,35 @@
 {
-  "sections": {},
-  "order": []
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "tag": "Unclear Lab",
+        "heading": "<p>Your heading<br><em>goes here</em></p>",
+        "body": "A short line about your product — what it does and why it matters.",
+        "cta_label": "Shop now",
+        "cta_url": "/collections/all",
+        "secondary_label": "",
+        "secondary_url": ""
+      }
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "settings": {
+        "heading": "The collection",
+        "subtext": "",
+        "product_limit": 3,
+        "view_all_label": ""
+      }
+    },
+    "email-cta": {
+      "type": "email-cta",
+      "settings": {
+        "tag": "Stay in the loop",
+        "heading": "<p>Be first<br><em>to know</em></p>",
+        "button_label": "Notify me",
+        "confirm_text": "You're on the list — we'll be in touch"
+      }
+    }
+  },
+  "order": ["hero", "featured-collection", "email-cta"]
 }
