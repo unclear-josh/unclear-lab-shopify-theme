@@ -4,7 +4,8 @@
       "type": "hero",
       "settings": {
         "tag": "New things, made well",
-        "heading": "<p>What's out<br><em>this month?</em></p>",
+        "heading_line1": "What's out",
+        "heading_line2": "this month?",
         "body": "",
         "cta_label": "Have a look",
         "cta_url": "/collections/all",

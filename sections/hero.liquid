@@ -5,26 +5,31 @@
       <p class="section-tag hero-tag reveal">{{ section.settings.tag }}</p>
     {%- endif -%}
 
-    {%- if section.settings.heading != blank -%}
-      <h1 class="reveal reveal-delay-1">{{ section.settings.heading }}</h1>
-    {%- endif -%}
+    <h1 class="hero-heading reveal reveal-delay-1">
+      {%- if section.settings.heading_line1 != blank -%}
+        {{ section.settings.heading_line1 }}
+      {%- endif -%}
+      {%- if section.settings.heading_line2 != blank -%}
+        <br><em>{{ section.settings.heading_line2 }}</em>
+      {%- endif -%}
+    </h1>
 
     {%- if section.settings.body != blank -%}
       <p class="hero-body reveal reveal-delay-2">{{ section.settings.body }}</p>
     {%- endif -%}
 
-    <div class="hero-actions reveal reveal-delay-3">
-      {%- if section.settings.cta_label != blank -%}
+    {%- if section.settings.cta_label != blank -%}
+      <div class="hero-actions reveal reveal-delay-3">
         <a href="{{ section.settings.cta_url }}" class="btn btn-dark">
           {{ section.settings.cta_label }}
         </a>
-      {%- endif -%}
-      {%- if section.settings.secondary_label != blank -%}
-        <a href="{{ section.settings.secondary_url }}" class="btn btn-outline">
-          {{ section.settings.secondary_label }}
-        </a>
-      {%- endif -%}
-    </div>
+        {%- if section.settings.secondary_label != blank -%}
+          <a href="{{ section.settings.secondary_url }}" class="btn btn-outline">
+            {{ section.settings.secondary_label }}
+          </a>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
 
   </div>
 </section>
@@ -37,31 +42,36 @@
     {
       "type": "text",
       "id": "tag",
-      "label": "Tag line (mono, above heading)",
-      "default": "Unclear Lab"
+      "label": "Tag line",
+      "default": "New things, made well"
     },
     {
-      "type": "richtext",
-      "id": "heading",
-      "label": "Heading (use <em> for italic accent)",
-      "default": "<p>Your heading<br><em>goes here</em></p>"
+      "type": "text",
+      "id": "heading_line1",
+      "label": "Heading — line 1",
+      "default": "What's out"
+    },
+    {
+      "type": "text",
+      "id": "heading_line2",
+      "label": "Heading — line 2 (italic)",
+      "default": "this month?"
     },
     {
       "type": "textarea",
       "id": "body",
-      "label": "Body text",
-      "default": "A short line about your product — what it does and why it matters."
+      "label": "Body text"
     },
     {
       "type": "text",
       "id": "cta_label",
-      "label": "Primary CTA label",
-      "default": "Shop now"
+      "label": "CTA label",
+      "default": "Have a look"
     },
     {
       "type": "url",
       "id": "cta_url",
-      "label": "Primary CTA URL"
+      "label": "CTA URL"
     },
     {
       "type": "text",

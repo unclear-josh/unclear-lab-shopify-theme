@@ -461,31 +461,50 @@ img {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 60%, var(--bg-warm) 0%, var(--bg) 70%);
+  background: radial-gradient(ellipse at 50% 55%, var(--bg-warm) 0%, var(--bg) 68%);
   pointer-events: none;
   z-index: 0;
 }
 
 .hero-inner {
-  max-width: 640px;
+  max-width: 580px;
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero-tag {
-  margin-bottom: 40px;
+  margin-bottom: 48px;
   justify-content: center;
 }
 
+.hero-heading {
+  font-family: 'Syne', sans-serif;
+  font-weight: 300;
+  font-size: clamp(48px, 7vw, 88px);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.hero-heading em {
+  font-style: italic;
+  font-weight: 200;
+  color: var(--ink-mid);
+}
+
 .hero-body {
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.8;
-  max-width: 480px;
-  margin: 32px auto 0;
+  max-width: 400px;
+  margin: 28px auto 0;
+  color: var(--ink-mid);
 }
 
 .hero-actions {
-  margin-top: 48px;
+  margin-top: 44px;
   display: flex;
   gap: 12px;
   align-items: center;
