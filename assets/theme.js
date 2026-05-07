@@ -1,3 +1,21 @@
+// ── Font loading — hide hero heading until Syne is ready ──
+(function () {
+  var html = document.documentElement;
+  html.classList.add('fonts-loading');
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(function () {
+      html.classList.remove('fonts-loading');
+      html.classList.add('fonts-loaded');
+    });
+  } else {
+    // Fallback: just remove after a short delay
+    setTimeout(function () {
+      html.classList.remove('fonts-loading');
+      html.classList.add('fonts-loaded');
+    }, 300);
+  }
+})();
+
 // ── Nav scroll state ──
 (function () {
   const header = document.getElementById('site-header');

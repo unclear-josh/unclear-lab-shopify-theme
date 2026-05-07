@@ -482,12 +482,20 @@ img {
 .hero-heading {
   font-family: 'Syne', sans-serif;
   font-weight: 300;
-  font-size: clamp(40px, 5.5vw, 72px);
-  line-height: 1.06;
+  font-size: clamp(48px, 7vw, 88px);
+  line-height: 1.04;
   letter-spacing: -0.02em;
   color: var(--ink);
   max-width: 100%;
   overflow-wrap: break-word;
+}
+
+/* Hide hero heading until Syne is loaded — prevents fallback font clipping */
+.fonts-loading .hero-heading {
+  opacity: 0;
+}
+.fonts-loaded .hero-heading {
+  opacity: 1;
 }
 
 .hero-heading em {
