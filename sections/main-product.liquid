@@ -91,6 +91,7 @@
       {%- endunless -%}
 
       <input type="hidden" name="id" id="variant-id" value="{{ product.selected_or_first_available_variant.id }}">
+      <input type="hidden" name="quantity" value="1">
 
       <div class="product-atc">
         {%- if product.selected_or_first_available_variant.available -%}
