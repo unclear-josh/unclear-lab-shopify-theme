@@ -1,0 +1,83 @@
+<div class="page-content">
+  <h1 class="reveal">{{ page.title }}</h1>
+
+  {%- if page.content != blank -%}
+    <div class="rte reveal reveal-delay-1" style="margin-bottom:48px;">
+      {{ page.content }}
+    </div>
+  {%- endif -%}
+
+  {%- form 'contact', id: 'ContactForm' -%}
+
+    {%- if form.posted_successfully? -%}
+      <p class="contact-success reveal">
+        {{ 'general.contact.post_success' | t | default: "Thanks — we'll be in touch." }}
+      </p>
+    {%- else -%}
+
+      {%- if form.errors -%}
+        <p class="contact-error reveal">
+          {{ form.errors | default_errors }}
+        </p>
+      {%- endif -%}
+
+      <div class="contact-form reveal reveal-delay-1">
+
+        <div class="contact-row">
+          <div class="contact-field">
+            <label class="contact-label" for="ContactForm-name">Name</label>
+            <input
+              type="text"
+              id="ContactForm-name"
+              name="contact[name]"
+              class="input contact-input"
+              value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+              autocomplete="name"
+              placeholder="Your name"
+            >
+          </div>
+
+          <div class="contact-field">
+            <label class="contact-label" for="ContactForm-email">Email</label>
+            <input
+              type="email"
+              id="ContactForm-email"
+              name="contact[email]"
+              class="input contact-input"
+              value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+              autocomplete="email"
+              autocorrect="off"
+              autocapitalize="off"
+              placeholder="your@email.com"
+              required
+            >
+          </div>
+        </div>
+
+        <div class="contact-field">
+          <label class="contact-label" for="ContactForm-message">Message</label>
+          <textarea
+            id="ContactForm-message"
+            name="contact[body]"
+            class="input contact-textarea"
+            rows="6"
+            placeholder="What's on your mind?"
+          >{{ form.body }}</textarea>
+        </div>
+
+        <div class="contact-actions">
+          <button type="submit" class="btn btn-dark">Send message</button>
+        </div>
+
+      </div>
+
+    {%- endif -%}
+
+  {%- endform -%}
+</div>
+
+{% schema %}
+{
+  "name": "Contact"
+}
+{% endschema %}
